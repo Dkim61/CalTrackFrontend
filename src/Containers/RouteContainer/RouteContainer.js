@@ -35,15 +35,14 @@ class RouteContainer extends Component {
   
 
     render() {
-        console.log(this.props.userInfo)
-        console.log(this.state.consumptions)
+        console.log(this.props.dishInfo)
         return (
                 <div className="routes">
                 <Switch>
                     <Route exact path="/" render={() => <LoginContainer/>} />
-                    <Route path="/add" render={() => <AddConsumptionContainer />} />
+                    <Route path="/add" render={() => <AddConsumptionContainer dishesAPI={this.props.dishesInfo} />} />
                     <Route path="/profile" render={() => <ProfilePage userAPI={this.props.userInfo} />}/>
-                    <Route path='/consumptions/:id' render={routerProps => this.renderConsumptions(routerProps)} />
+                    {/* <Route path='/consumptions/:id' render={routerProps => this.renderConsumptions(routerProps)} /> */}
                     <Route component={NotFound} />
                 </Switch>
         

@@ -9,27 +9,33 @@ import RouteContainer from '../RouteContainer/RouteContainer'
 class HomePageContainer extends Component {
 
     state= {
-        UserApi: []
+        UserApi: [],
+        DishApi: []
       }
     
       componentDidMount(){
-        fetch('http://localhost:3001/users/2')
-          .then(resp => resp.json())
-          .then((userData) => {
-            this.setState({
-              UserApi: userData
-            })
+        Promise.all([
+        fetch('http://localhost:3001/users/1'), 
+        fetch('http://localhost:3001/dishes')
+        ])
+        .then(([res1, res2]) => {
+        return Promise.all([res1.json(),res2.json()])
+        })
+        .then(([data1, data2]) => {
+          this.setState({
+            UserApi:data1,
+            DishApi:data2
           })
-    }
+        })
+      }
       
 
     render() {
+      console.log(this.state)
         return (
             <div className="homepage-container">
                 <Sidebar />
-                <RouteContainer userInfo={this.state.UserApi} />
-                {/* <LoginContainer /> */}
-                {/* <WorkoutForm /> */}
+                <RouteContainer userInfo={this.state.UserApi} dishesInfo={this.state.DishApi} />
             </div>
         );
     }
