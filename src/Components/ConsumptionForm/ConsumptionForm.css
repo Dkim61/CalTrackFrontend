@@ -1,0 +1,44 @@
+  
+.consumption-form-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.consumption-input{
+    margin-bottom: 10px;
+    width: 350px;
+    height: 30px;
+}
+
+.consumption-submit-btn{
+    width: 355px;
+    height: 40px;
+    background-color: #424242;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.consumption-submit-btn:hover{
+    background-color: #747474;
+}
+
+.create-consumption {
+    width: 355px;
+    height: 40px;
+    background-color: #d86666;
+    color: white;
+    font-weight: bold;
+}
+
+.create-consumption:hover { 
+    background-color: #747474;
+}
+
+.date-input {
+    font-family: arial, sans-serif;
+    width: 350px;
+    height: 30px;
+    margin-bottom: 10px;
+}

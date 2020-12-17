@@ -1,0 +1,32 @@
+
+.consumption-page {
+    width: 100vw;
+    height: 100vh;
+    margin-left: 80px;
+}
+
+.consumption-title {
+    text-align: center;
+}
+
+.delete-consumption-btn {
+    width: 200px;
+    height: 40px;
+    background-color: #424242;
+    color: white;
+}
+
+.delete-consumption-btn:hover {
+    background-color: #d86666;
+}
+
+.topbar-wrapper {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.delete-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}

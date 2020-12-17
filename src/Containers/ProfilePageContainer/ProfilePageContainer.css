@@ -1,0 +1,96 @@
+.profile-page {
+    /* width: 100vw;
+    height: 100vh; */
+    margin-left: 80px;
+}
+
+.profile-img {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+
+.about-me-container {
+    height: 100vh;
+    width: 50%;
+    background-color: #adadad;
+    
+}
+
+.consumption-container {
+  height: 100vh;
+  width: 50%;
+  background-color: #b9b6b6a4;
+  
+}
+
+
+.img-container {
+    height: 100vh;
+    width: 50%; 
+    background-color: #40c3d4;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.info-page {
+    width: 100%;
+    display: flex;
+}
+
+.username {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 100px;
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.about-me-title {
+    color: #6697d8;
+    font-size: 50px;
+}
+
+.about-me-info {
+   margin: 10%;
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+p {
+    font-weight: bold;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }

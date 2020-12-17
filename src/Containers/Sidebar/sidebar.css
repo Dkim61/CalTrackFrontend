@@ -1,0 +1,65 @@
+.sidebar {
+    height: 100%;
+    width: 80px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #424242; 
+    overflow-x: hidden; 
+    padding-top: 20px;
+    
+}
+
+button {
+    margin-top: 50px;
+    background: none;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+}
+
+.icon-container{
+    margin-top: 20px;
+    margin-left: 16px;
+}
+
+.profile-btn:hover {
+    -webkit-animation: fade-in 1.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;    
+    background-color: #b0b0b0;
+    border-radius: 30px;
+}
+
+
+.add-btn:hover {
+     -webkit-animation: fade-in 1.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both; 
+    transition: opacity 0.10s ease-in;
+    background-color: #b0b0b0;
+    border-radius: 30px;
+}
+
+.social-btn:hover {
+    transition: opacity 0.10s ease-in;
+    background-color: #b0b0b0;
+    border-radius: 30px;
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
