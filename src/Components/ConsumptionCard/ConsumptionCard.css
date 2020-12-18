@@ -11,3 +11,39 @@
 .consumption-name {
     color: rgb(0, 0, 0);
 }
+
+.delete-consumption-btn {
+    width: 200px;
+    height: 40px;
+    background-color: #424242;
+    color: white;
+}
+
+.delete-consumption-btn:hover {
+    background-color: #d86666;
+}
+
+.delete-consumption-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.update-consumption-btn {
+    background-color: #414141;
+    width: fit-content;
+    height: 32px;
+    color: white;
+}
+
+.consumption-id {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+}
+.consumption-date {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+}

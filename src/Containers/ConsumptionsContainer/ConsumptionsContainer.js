@@ -17,7 +17,7 @@ class ConsumptionsContainer extends Component {
     }
 
     renderCards = () => {
-            return this.state.consumptions.map(consumption => <ConsumptionCard id={consumption.id} />)
+            return this.state.consumptions.map(consumption => <ConsumptionCard consumptionObj={consumption} id={consumption.id} />)
     }
 
 
