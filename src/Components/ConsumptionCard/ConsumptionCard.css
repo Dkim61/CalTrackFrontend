@@ -38,12 +38,19 @@
 .consumption-id {
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     text-decoration: underline;
 }
 .consumption-date {
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+
+.consumption-servings {
+    color: white;
+    display: flex;
+    justify-content: space-between;
     text-decoration: underline;
 }

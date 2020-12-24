@@ -4,7 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import ConsumptionsContainer from '../ConsumptionsContainer/ConsumptionsContainer';
 import './ProfilePageContainer.css'
 
-class ProfilePage extends Component {
+class ProfilePageContainer extends Component {
     render() 
     {
         console.log(this.props.userAPI)
@@ -44,7 +44,7 @@ class ProfilePage extends Component {
                         </div>
                  </div>
                  <div className="consumption-container">
-                    <ConsumptionsContainer/>
+                    <ConsumptionsContainer dishesOptions={this.props.dishesOptions}/>
                  </div>
             </div>
 
@@ -56,4 +56,4 @@ class ProfilePage extends Component {
     }
 }
 
-export default ProfilePage;
+export default ProfilePageContainer;

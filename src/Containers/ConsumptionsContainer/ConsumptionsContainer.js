@@ -8,16 +8,32 @@ class ConsumptionsContainer extends Component {
         consumptions: []
     }
 
-    componentDidMount(){
+    componentDidMount() {
         fetch('http://localhost:3001/consumptions/')
-        .then(response => response.json())
-        .then((data) => {
-            this.setState({consumptions: data})
+            .then(response => response.json())
+            .then((data) => {
+                this.setState({consumptions: data})
         })
+    }
+    handleDelete = (id) => {
+        fetch(`http://localhost:3001/consumptions/${id}`, {
+            method: "DELETE"
+        })
+        .then(resp => resp.json())
+        .then((data) => {
+            let copy = [...this.state.consumptions]
+            let index = copy.indexOf(data)
+            copy.splice(index, 1)
+            this.setState({
+                consumptions: copy
+            })
+            // this.props.history.push("/profile")
+        }
+        )
     }
 
     renderCards = () => {
-            return this.state.consumptions.map(consumption => <ConsumptionCard consumptionObj={consumption} id={consumption.id} />)
+            return this.state.consumptions.map(consumption => <ConsumptionCard consumptionObj={consumption} id={consumption.id} handleDelete={this.handleDelete} dishesOptions={this.props.dishesOptions} dishName={consumption.dish}/>)
     }
 
 

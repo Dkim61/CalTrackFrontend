@@ -6,7 +6,7 @@ class AddConsumptionContainer extends Component {
     render() {
         return (
             <div className='default-page'>
-                <ConsumptionForm />
+                <ConsumptionForm dishesOptions={this.props.dishesOptions}/>
             </div>
         );
     }
