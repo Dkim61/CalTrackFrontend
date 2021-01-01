@@ -33,7 +33,7 @@ class ConsumptionsContainer extends Component {
     }
 
     renderCards = () => {
-            return this.state.consumptions.map(consumption => <ConsumptionCard consumptionObj={consumption} id={consumption.id} handleDelete={this.handleDelete} dishesOptions={this.props.dishesOptions} dishName={consumption.dish}/>)
+            return this.state.consumptions.map(consumption => <ConsumptionCard consumptionObj={consumption} consumptionId={consumption.id} handleDelete={this.handleDelete} dishesOptions={this.props.dishesOptions} dishName={consumption.dish}/>)
     }
 
 

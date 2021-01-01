@@ -26,8 +26,8 @@ class Sidebar extends Component {
                         <button className="add-btn"><img height='32px' width='32px' src={PlusSymbol} alt="+" /></button> 
                     </NavLink> 
 
-                    <NavLink to='/calendar'>
-                        <button className="social-btn"><img height="32px" width="32px" src={Calendar} alt="Social Media" /></button> 
+                    <NavLink to='/consumptions'>
+                        <button className="consumtions-btn"><img height="32px" width="32px" src={Calendar} alt="Social Media" /></button> 
                     </NavLink>
                 </div>
                 

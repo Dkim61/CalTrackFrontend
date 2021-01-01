@@ -10,10 +10,15 @@ class UpdateConsumption extends Component {
         dish_id: 0,
         servings: 0,
         date: "",
-        id: this.props.consumption_id
+        id: 0
     }
 
-
+    componentDidMount(){
+        this.setState({
+            id: this.props.consumptionId
+        })
+    }
+    
     
 
     changeHandler = (e) => {

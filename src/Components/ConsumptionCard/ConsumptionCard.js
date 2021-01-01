@@ -23,7 +23,7 @@ class ConsumptionCard extends Component {
     }
 
     render() {
-        console.log(this.props.consumptionObj.consumpti)
+        console.log(this.props.consumptionObj.consumption.id)
         return (
             <div className="consumption-card">
                 <div>Date:
@@ -36,8 +36,8 @@ class ConsumptionCard extends Component {
                 <h2 className="consumption-servings">{this.props.consumptionObj.consumption.servings}</h2>
                 </div>
                 <button className="update-consumption-btn" onClick={this.changeStatus} >Update Consumption</button>
-                <div>{this.state.status ? <UpdateConsumption consumption={this.props.consumption} consumption_id={this.props.id} dishesOptions={this.props.dishesOptions} />  : null }</div>
-                <Link to="/profile"><button className='delete-consumption-btn' onClick={() => this.props.handleDelete(this.props.id)} >Delete Consumption</button></Link>
+                <div>{this.state.status ? <UpdateConsumption consumption={this.props.consumption} consumptionId={this.props.consumptionObj.consumption.id} dishesOptions={this.props.dishesOptions} />  : null }</div>
+                <Link to="/profile"><button className='delete-consumption-btn' onClick={() => this.props.handleDelete(this.props.consumptionObj.consumption.id)} >Delete Consumption</button></Link>
             </div>
         );
     }

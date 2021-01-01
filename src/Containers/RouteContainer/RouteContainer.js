@@ -6,6 +6,7 @@ import NotFound from '../../Components/404/NotFound'
 import LoginContainer from '../LoginContainer/LoginContainer'
 import ConsumptionPageContainer from '../ConsumptionPageContainer/ConsumptionPageContainer';
 import AddConsumptionContainer from '../AddConsumptionContainer/AddConsumptionContainer.js'
+import ConsumptionsContainer from '../ConsumptionsContainer/ConsumptionsContainer';
 
 
 
@@ -24,17 +25,16 @@ class RouteContainer extends Component {
   
 
     render() {
-        console.log(this.props.dishInfo)
+        console.log(this.props.dishesInfo)
         return (
                 <div className="routes">
                 <Switch>
                     <Route exact path="/" render={() => <LoginContainer/>} />
                     <Route path="/add" render={() => <AddConsumptionContainer dishesAPI={this.props.dishesInfo} dishesOptions={this.props.dishesOptions}/>} />
                     <Route path="/profile" render={() => <ProfilePageContainer userAPI={this.props.userInfo} dishesOptions={this.props.dishesOptions} />}/>
-                    {/* <Route path='/consumptions/:id' render={routerProps => this.renderConsumptions(routerProps)} /> */}
+                    <Route path="/consumptions" render={() => <ConsumptionsContainer dishesOptions={this.props.dishesOptions} />}/>
                     <Route component={NotFound} />
                 </Switch>
-        
             </div>
         );
     }

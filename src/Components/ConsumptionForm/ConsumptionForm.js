@@ -64,7 +64,7 @@ class ConsumptionForm extends Component {
                     {/* <input className='dishId-input' name='dish_id' type='number' placeholder='dish_id' onChange={this.changeHandler} value={this.state.dish_id}/> <br/> */}
                     <Select options={this.state.selectOptions} onChange={this.handleCollectionChange.bind(this)}/>
                     <input className='servings-input' name='servings' type='number' placeholder='Servings' onChange={this.changeHandler} value={this.state.servings}/> <br/>
-                    <input className='date-input' name='date' type='text' placeholder='Date' onChange={this.changeHandler} value={this.state.date}/> <br/>
+                    <input className='date-input' name='date' type='date' placeholder='Date' onChange={this.changeHandler} value={this.state.date}/> <br/>
                     <button className='consumption-submit-btn' type='submit'>Submit</button><br/>
                 </form>
             
