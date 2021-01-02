@@ -20,7 +20,6 @@ class UpdateConsumption extends Component {
     }
     
     
-
     changeHandler = (e) => {
         this.setState({ [e.target.name]: e.target.value })
         console.log("Update Consumption Form Handler", this.state)
@@ -50,7 +49,8 @@ class UpdateConsumption extends Component {
 
 
     render() {
-        console.log("000000000", this.state)
+        console.log("000000000", this.state);
+        console.log("000000000", this.props.dishesOptions);
         return (
             <div className='consumption-form'>
                 <form onSubmit={this.consumptionUpdate}>

@@ -1,13 +1,42 @@
-
 import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
-import ConsumptionsContainer from '../ConsumptionsContainer/ConsumptionsContainer';
+import ProfileConsumptionContainer from '../ProfileConsumptionContainer/ProfileConsumptionContainer';
 import './ProfilePageContainer.css'
 
 class ProfilePageContainer extends Component {
+
+    state = {
+        consumptions: []
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:3001/consumptions/')
+            .then(response => response.json())
+            .then((data) => {
+                this.setState({consumptions: data})
+        })
+    }
+
+    handleDelete = (id) => {
+        fetch(`http://localhost:3001/consumptions/${id}`, {
+            method: "DELETE"
+        })
+        .then(resp => resp.json())
+        .then((data) => {
+            let copy = [...this.state.consumptions]
+            let index = copy.indexOf(data)
+            copy.splice(index, 1)
+            this.setState({
+                consumptions: copy
+            })
+            // this.props.history.push("/profile")
+        }
+        )
+    }
+  
+
     render() 
     {
-        console.log(this.props.userAPI)
         return (
             <div className="profile-page">
                 <h2 className="username">Welcome, {this.props.userAPI.username}</h2>
@@ -43,8 +72,11 @@ class ProfilePageContainer extends Component {
                             <p>{this.props.userAPI.weight}</p>
                         </div>
                  </div>
-                 <div className="consumption-container">
+                 {/* <div className="consumption-container">
                     <ConsumptionsContainer dishesOptions={this.props.dishesOptions}/>
+                 </div> */}
+                  <div className="profile-consumption-container">
+                    <ProfileConsumptionContainer consumptionApi={this.state.consumptions} handleDelete={this.handleDelete} dishesOptions={this.props.dishesOptions} />
                  </div>
             </div>
 

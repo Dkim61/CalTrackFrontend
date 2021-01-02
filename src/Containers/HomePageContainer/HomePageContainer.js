@@ -35,7 +35,7 @@ class HomePageContainer extends Component {
         return (
             <div className="homepage-container">
                 <Sidebar />
-                <RouteContainer userInfo={this.state.UserApi} dishesInfo={this.state.DishApi} dishesOptions={this.props.dishOptions}/>
+                <RouteContainer userInfo={this.state.UserApi} dishesInfo={this.state.DishApi}/>
             </div>
         );
     }

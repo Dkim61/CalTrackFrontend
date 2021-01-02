@@ -18,11 +18,27 @@ class ConsumptionForm extends Component {
     }
 
     
- componentDidMount(){
-    this.setState({
-        selectOptions : this.props.dishesOptions
-    })
-}
+
+    async getOptions(){
+        const res = await axios.get('http://localhost:3001/dishes/')
+        const data = res.data
+        console.log(data)
+
+    
+        const options = data.map(d => ({
+          "value" : d.id,
+          "label" : d.name
+    
+        }))
+    
+        this.setState({selectOptions: options})
+    
+      }
+     
+    
+     componentDidMount(){
+      this.getOptions()
+      }
 
 
     changeHandler = (e) => {
