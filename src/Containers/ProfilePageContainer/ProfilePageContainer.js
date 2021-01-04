@@ -25,13 +25,40 @@ class ProfilePageContainer extends Component {
         .then((data) => {
             let copy = [...this.state.consumptions]
             let index = copy.indexOf(data)
-            copy.splice(index, 1)
+            copy.splice(index, id)
             this.setState({
                 consumptions: copy
             })
             // this.props.history.push("/profile")
         }
         )
+    }
+
+    consumptionUpdate = (consumptionObj) => {
+        const config = {
+            method: 'PATCH',
+            body: JSON.stringify(consumptionObj),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        fetch(`http://localhost:3001/consumptions/${consumptionObj.id}`, config)
+        .then(response => response.json())
+        .then(data => {
+            // let consumptionsArray=[...this.state.consumptions]
+            // console.log(consumptionsArray)
+            // let consumptionIndex = consumptionsArray.findIndex(c => c.id === data.id)
+            // consumptionsArray.splice(consumptionIndex, 1, data)
+            // console.log(consumptionsArray)
+            // this.setState({
+            //     consumptions: consumptionsArray
+            fetch('http://localhost:3001/consumptions/')
+            .then(response => response.json())
+            .then((data) => {
+                this.setState({consumptions: data})
+            })
+        // this.setState({dish_id: 0, servings: 0, date: "", id: 0})
+        } )
     }
   
 
@@ -76,7 +103,7 @@ class ProfilePageContainer extends Component {
                     <ConsumptionsContainer dishesOptions={this.props.dishesOptions}/>
                  </div> */}
                   <div className="profile-consumption-container">
-                    <ProfileConsumptionContainer consumptionApi={this.state.consumptions} handleDelete={this.handleDelete} dishesOptions={this.props.dishesOptions} />
+                    <ProfileConsumptionContainer consumptionApi={this.state.consumptions} handleDelete={this.handleDelete} consumptionUpdate={this.consumptionUpdate} dishesOptions={this.props.dishesOptions} />
                  </div>
             </div>
 

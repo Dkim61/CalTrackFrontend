@@ -4,6 +4,7 @@ import HomeComponent from '../../icons/home.svg'
 import Calendar from '../../icons/calendar.svg'
 import Home from '../../icons/home.svg'
 import PlusSymbol from '../../icons/plus-symbol.svg'
+import Account from '../../icons/account.svg'
 import { BrowserRouter, Link, Route, NavLink } from 'react-router-dom';
 
 
@@ -28,6 +29,10 @@ class Sidebar extends Component {
 
                     <NavLink to='/consumptions'>
                         <button className="consumtions-btn"><img height="32px" width="32px" src={Calendar} alt="Social Media" /></button> 
+                    </NavLink>
+
+                    <NavLink to='/dishes'>
+                        <button className="dishes-btn"><img height="32px" width="32px" src={Account} alt="Social Media" /></button> 
                     </NavLink>
                 </div>
                 
