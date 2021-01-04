@@ -49,6 +49,11 @@ class ConsumptionCard extends Component {
         })
     }
 
+    localHandleDelete = () => {
+        // console.log(this.props.consumptionObj.consumption.id)
+        this.props.handleDelete(this.props.consumptionObj.consumption.id)
+    }
+
     render() {
         console.log("CARD'S ID:", this.props.consumptionObj.consumption.id);
         console.log(this.state)
@@ -74,7 +79,7 @@ class ConsumptionCard extends Component {
                 </div>
                 <button className="update-consumption-btn" onClick={this.changeStatus} >Update Consumption</button>
                 <div>{this.state.status ? <UpdateConsumption consumptionObj={this.props.consumptionObj} id={this.props.consumptionObj.consumption.id} dishesOptions={this.state.selectOptions} consumptionUpdate={this.props.consumptionUpdate} formCloser={this.formCloser}/>  : null }</div>
-                <Link to="/profile"><button className='delete-consumption-btn' onClick={() => this.props.handleDelete(this.props.consumptionObj.consumption.id)} >Delete Consumption</button></Link>
+                <button className='delete-consumption-btn' onClick={this.localHandleDelete} >Delete Consumption</button>
             </div>
         );
     }

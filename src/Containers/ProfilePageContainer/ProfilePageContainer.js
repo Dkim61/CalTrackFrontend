@@ -24,8 +24,10 @@ class ProfilePageContainer extends Component {
         .then(resp => resp.json())
         .then((data) => {
             let copy = [...this.state.consumptions]
-            let index = copy.indexOf(data)
-            copy.splice(index, id)
+            let index = copy.findIndex(c => c.id === id)
+            copy.splice(index, 1)
+            console.log("DELETED", copy)
+            console.log("ID", id)
             this.setState({
                 consumptions: copy
             })
