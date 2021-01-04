@@ -21,11 +21,17 @@ class ConsumptionsContainer extends Component {
         })
         .then(resp => resp.json())
         .then((data) => {
-            let copy = [...this.state.consumptions]
-            let index = copy.indexOf(data)
-            copy.splice(index, 1)
+            // let copy = [...this.state.consumptions]
+            // let index = copy.indexOf(data)
+            // copy.splice(index, 1)
+            // this.setState({
+            //     consumptions: copy
+            // })
+            let newConsumptions = this.state.consumptions.filter((consumption) => {
+                return consumption.id !== id
+            })
             this.setState({
-                consumptions: copy
+                consumptions: newConsumptions
             })
             // this.props.history.push("/profile")
         }

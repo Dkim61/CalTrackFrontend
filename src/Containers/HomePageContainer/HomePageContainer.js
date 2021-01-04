@@ -28,6 +28,24 @@ class HomePageContainer extends Component {
           })
         })
       }
+
+      handleDelete = (id) => {
+        fetch(`http://localhost:3001/dishes/${id}`, {
+            method: "DELETE"
+        })
+        .then(resp => resp.json())
+        .then((data) => {
+            let copy = [...this.state.DishApi]
+            let index = copy.indexOf(data)
+            copy.splice(index, id)
+            this.setState({
+              DishApi: copy
+            })
+            // this.props.history.push("/profile")
+        }
+        )
+        window.location.reload()
+    }
       
 
     render() {
@@ -35,7 +53,7 @@ class HomePageContainer extends Component {
         return (
             <div className="homepage-container">
                 <Sidebar />
-                <RouteContainer userInfo={this.state.UserApi} dishesInfo={this.state.DishApi}/>
+                <RouteContainer userInfo={this.state.UserApi} dishesInfo={this.state.DishApi} handleDelete={this.handleDelete}/>
             </div>
         );
     }

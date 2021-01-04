@@ -37,7 +37,7 @@ class RouteContainer extends Component {
                     <Route path="/add" render={() => <AddConsumptionContainer dishesAPI={this.props.dishesInfo} dishesOptions={this.props.dishesOptions}/>} />
                     <Route path="/profile" render={() => <ProfilePageContainer userAPI={this.props.userInfo} dishesOptions={this.props.dishesInfo} />}/>
                     <Route path="/consumptions" render={() => <ConsumptionsContainer dishesOptions={this.props.dishesOptions} />}/>
-                    <Route path="/dishes" render={() => <DishesContainer dishesOptions={this.props.dishesInfo} />}/>
+                    <Route path="/dishes" render={() => <DishesContainer dishesOptions={this.props.dishesInfo} handleDelete={this.props.handleDelete}/>}/>
                     {/* <Route path='/dishes/:id' render={routerProps => this.renderDishes(routerProps)} /> */}
                     <Route component={NotFound} />
                 </Switch>

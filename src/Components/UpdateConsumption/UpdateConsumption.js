@@ -30,25 +30,13 @@ class UpdateConsumption extends Component {
     }
 
 
-    // consumptionUpdate = (e) => {
-    //     e.preventDefault()
-    //     const config = {
-    //         method: 'PATCH',
-    //         body: JSON.stringify(this.state),
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     }
-    //     fetch(`http://localhost:3001/consumptions/${this.state.id}`, config)
-    //     .then(response => response.json())
-    //     .then(data => console.log("IN UPDATE", data))
-    //     this.setState({dish_id: 0, servings: 0, date: "", id: 0})
-    //     this.props.formCloser()
-    // }
+
     handleUpdateConsumption = (e) => {
         e.preventDefault()
+        // localStorage.setItem("dishId", this.state.dish_id)
+        // localStorage.setItem("servings", this.state.servings)
         this.props.consumptionUpdate(this.state)
-        this.props.formCloser()
+        // this.props.formCloser()
     }
 
 

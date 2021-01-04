@@ -77,7 +77,6 @@ class ConsumptionForm extends Component {
             <div className='consumption-form-wrapper'>
                 <form onSubmit={this.localSubmitHandler}>
                     <h2>Consume!</h2>
-                    {/* <input className='dishId-input' name='dish_id' type='number' placeholder='dish_id' onChange={this.changeHandler} value={this.state.dish_id}/> <br/> */}
                     <Select options={this.state.selectOptions} onChange={this.handleCollectionChange.bind(this)}/>
                     <input className='servings-input' name='servings' type='number' placeholder='Servings' onChange={this.changeHandler} value={this.state.servings}/> <br/>
                     <input className='date-input' name='date' type='date' placeholder='Date' onChange={this.changeHandler} value={this.state.date}/> <br/>
