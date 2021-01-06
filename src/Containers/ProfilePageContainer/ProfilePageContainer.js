@@ -24,7 +24,7 @@ class ProfilePageContainer extends Component {
         .then(resp => resp.json())
         .then((data) => {
             let copy = [...this.state.consumptions]
-            let index = copy.findIndex(c => c.id === id)
+            let index = copy.findIndex(c => c.consumption.id === id)
             copy.splice(index, 1)
             console.log("DELETED", copy)
             console.log("ID", id)
@@ -74,7 +74,7 @@ class ProfilePageContainer extends Component {
             <div className='info-page'>
 
                 <div className='img-container'>
-                    <img src={this.props.userInfo} alt={this.props.userInfo} className="profile-img" />
+                    <img src={this.props.userAPI.profile_picture} alt={this.props.userInfo} className="profile-img" />
                  </div>
                 
                     

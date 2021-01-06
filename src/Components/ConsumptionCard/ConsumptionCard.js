@@ -50,7 +50,7 @@ class ConsumptionCard extends Component {
     }
 
     localHandleDelete = () => {
-        // console.log(this.props.consumptionObj.consumption.id)
+        console.log(this.props.consumptionObj.consumption.id)
         this.props.handleDelete(this.props.consumptionObj.consumption.id)
     }
 
@@ -62,6 +62,9 @@ class ConsumptionCard extends Component {
         // this.props.addCals(this.props.consumptionObj.consumption.dish.calories * this.props.consumptionObj.consumption.servings)
         return (
             <div className="consumption-card">
+                <div className='dish-img-container'>
+                    <img src={this.props.consumptionObj.consumption.dish.image} alt={this.props.consumptionObj.consumption.dish.name} className="dish-img" />
+                 </div>
                 <div>Date:
                 <h2 className="consumption-date">{this.props.consumptionObj.consumption.date}</h2>
                 </div>

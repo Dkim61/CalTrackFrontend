@@ -11,13 +11,16 @@ class DishCard extends Component {
         console.log(foundDish)
         return(
             <div>
+                <div className='img-container'>
+                    <img src={foundDish.image} alt={foundDish.name} className="profile-img" />
+                </div>
                 <h3>{foundDish.name}</h3>
                 <h3>{foundDish.calories}</h3>
                 <h3>{foundDish.protein}</h3>
                 <h3>{foundDish.fat}</h3>
                 <h3>{foundDish.carbs}</h3>
 
-                <Link to="/dishes"><button className='delete-dish-btn' onClick={() => this.props.handleDelete(this.props.id)} >Delete Consumption</button></Link>
+                <Link to="/dishes"><button className='delete-dish-btn' onClick={() => this.props.handleDelete(this.props.id)} >Delete Dish Permanently</button></Link>
 
 
             </div>

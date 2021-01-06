@@ -78,7 +78,7 @@ class ConsumptionForm extends Component {
                 <form onSubmit={this.localSubmitHandler}>
                     <h2>Consume!</h2>
                     <h4>Select your Dish:</h4>
-                    <Select options={this.state.selectOptions} onChange={this.handleCollectionChange.bind(this)}/>
+                    <Select options={this.state.selectOptions} placeholder='Select Food' onChange={this.handleCollectionChange.bind(this)}/>
                     <h4>Select your servings:</h4>
                     <input className='servings-input' name='servings' type='number' placeholder='Servings' onChange={this.changeHandler} value={this.state.servings}/> <br/>
                     <h4>Choose your date:</h4>

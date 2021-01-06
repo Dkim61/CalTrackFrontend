@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css'
+import { Link } from 'react-router-dom';
+
 
 class Login extends Component {
 
@@ -26,7 +28,7 @@ class Login extends Component {
                 <form className="login-form">
                     <input className="login-input" name="username" type="text" placeholder="Username" value={this.state.username} onChange={this.changeHandler}/> <br/>
                     <input className="login-input" name="password" type="password" placeholder="Password" value={this.state.password} onChange={this.changeHandler}/> <br/>
-                    <button id="login-btn" type="submit" >Login</button> <br/>
+                    <Link to="/profile" className="login-btn"><button id="login-btn" type="submit" >Login</button></Link> <br/>
                     <button id="signup-btn" type="submit" >Sign Up</button>
                 </form>
     
